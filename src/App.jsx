@@ -11,9 +11,9 @@ export default function App() {
 
   return (
     <>
-      <h1>CinéTech</h1>
+      <h1 style={{ color: 'red', backgroundColor: 'yellow' }}>CinéTech</h1>
       <main>
-        <h2>Films à l'affiche</h2>
+        <h2 style={{ fontSize: '20px' }}>Films à l'affiche</h2>
         <ul>
           {moviesList.map((movie) => (
             <li key={movie.id}>
@@ -27,7 +27,7 @@ export default function App() {
         </ul>
 
         <section>
-          <h2>Coups de cœur</h2>
+          <h2 style={{ fontSize: '20px' }}>Films à l'affiche</h2>
           <ul>
             {favoriteMovies.map((movie) => (
               <li key={movie.id}>
@@ -38,7 +38,7 @@ export default function App() {
         </section>
 
         <section>
-          <h2>Films de super-héros</h2>
+          <h2 style={{ fontSize: '20px' }}>Films de super-héros</h2>
           <ul>
             {superHeroMovies.map((movie) => (
               <li key={movie.id}>

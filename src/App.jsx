@@ -13,12 +13,18 @@ export default function App() {
 
   return (
     <>
-      <h1 className={styles.title}>CinéTech</h1>
-      <main>
+      <h1 className="text-4xl font-bold text-center my-6">CinéTech</h1>
+
+      <main className="max-w-7xl mx-auto mt-6">
         <h2 style={{ fontSize: '20px' }}>Films à l'affiche</h2>
-        <ul>
+        <ul className="grid grid-cols-1 sm:grid-cols-5 gap-6">
           {moviesList.map((movie) => (
-            <li key={movie.id}>
+            <li key={movie.id} className="bg-gray-100 rounded-xl p-4 shadow">
+              <img
+                src={movie.poster}
+                alt={movie.title}
+                className="w-full h-64 object-cover rounded"
+              />
               <h3>{movie.title}</h3>
               <p>
                 {movie.year} — {movie.director}
@@ -29,10 +35,15 @@ export default function App() {
         </ul>
 
         <section>
-          <h2 style={{ fontSize: '20px' }}>Films à l'affiche</h2>
-          <ul>
+          <h2 style={{ fontSize: '20px' }}>Coups de cœur</h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-5 gap-6">
             {favoriteMovies.map((movie) => (
-              <li key={movie.id}>
+              <li key={movie.id} className="bg-gray-100 rounded-xl p-4 shadow">
+                <img
+                  src={movie.poster}
+                  alt={movie.title}
+                  className="w-full h-64 object-cover rounded"
+                />
                 {movie.title} — {movie.rating}
               </li>
             ))}
@@ -41,10 +52,15 @@ export default function App() {
 
         <section>
           <h2 style={{ fontSize: '20px' }}>Films de super-héros</h2>
-          <ul>
+          <ul className="grid grid-cols-1 sm:grid-cols-5 gap-6">
             {superHeroMovies.map((movie) => (
-              <li key={movie.id}>
-                {movie.title} — {movie.category}
+              <li key={movie.id} className="bg-gray-100 rounded-xl p-4 shadow">
+                <img
+                  src={movie.poster}
+                  alt={movie.title}
+                  className="w-full h-64 object-cover rounded"
+                />
+                {movie.title} — {movie.Category}
               </li>
             ))}
           </ul>

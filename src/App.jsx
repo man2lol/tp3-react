@@ -2,6 +2,7 @@ import moviesList from './data/moviesList.js';
 
 export default function App() {
   console.log(moviesList);
+  const favoriteMovies = moviesList.filter((movie) => movie.rating >= 8);
   return (
     <>
       <h1>CinéTech</h1>
@@ -18,8 +19,18 @@ export default function App() {
             </li>
           ))}
         </ul>
+        <h2> Films coups de coeurs</h2>
+        <section>
+          <h2>Coups de cœur</h2>
+          <ul>
+            {favoriteMovies.map((movie) => (
+              <li key={movie.id}>
+                {movie.title} — {movie.rating}
+              </li>
+            ))}
+          </ul>
+        </section>
       </main>
-      ),
     </>
   );
 }

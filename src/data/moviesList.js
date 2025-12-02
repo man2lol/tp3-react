@@ -20,6 +20,7 @@ const moviesList = [
       'https://image.tmdb.org/t/p/w600_and_h900_face/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg',
     synopsis:
       "Diana Prince se retrouve face à un nouveau danger dans les années 80, période d'excès et de convoitise.",
+    Category: 'film de super héros',
   },
   {
     id: 3,
@@ -42,6 +43,7 @@ const moviesList = [
       'https://image.tmdb.org/t/p/w600_and_h900_face/jwfDFqzxBkXC5bERBZrCEfK9iii.jpg',
     synopsis:
       "L'identité de Spider-Man est révélée, entraînant le chaos et des menaces d'autres univers.",
+    Category: 'film de super héros',
   },
   {
     id: 5,
@@ -64,7 +66,9 @@ const moviesList = [
       'https://image.tmdb.org/t/p/w600_and_h900_face/wF7jv3x51hXgkl7t5KHePuRjXc8.jpg',
     synopsis:
       'Les Avengers restants tentent de défaire les actions de Thanos après le claquement de doigts dévastateur.',
+    Category: 'film de super héros',
   },
+
   {
     id: 7,
     title: 'Mission Impossible: Dead Reckoning',

@@ -6,6 +6,7 @@ export default function App() {
   console.log(moviesList);
 
   const favoriteMovies = moviesList.filter((movie) => movie.rating >= 8);
+  const featuredMovie = moviesList[0];
 
   const superHeroMovies = moviesList.filter(
     (movie) => movie.Category === 'film de super héros'
@@ -25,11 +26,14 @@ export default function App() {
                 alt={movie.title}
                 className="w-full h-64 object-cover rounded"
               />
-              <h3>{movie.title}</h3>
-              <p>
+
+              <h3 className="text-xl font-semibold mt-2">{movie.title}</h3>
+
+              <p className="text-sm text-gray-600 mt-2">
                 {movie.year} — {movie.director}
               </p>
-              <p>Note : {movie.rating}</p>
+
+              <p className="mt-2">Note : {movie.rating}</p>
             </li>
           ))}
         </ul>
@@ -44,7 +48,14 @@ export default function App() {
                   alt={movie.title}
                   className="w-full h-64 object-cover rounded"
                 />
-                {movie.title} — {movie.rating}
+
+                <h3 className="text-xl font-semibold mt-2">{movie.title}</h3>
+
+                <p className="text-sm text-gray-600 mt-2">
+                  {movie.year} — {movie.director}
+                </p>
+
+                <p className="mt-2">Note : {movie.rating}</p>
               </li>
             ))}
           </ul>
@@ -60,10 +71,42 @@ export default function App() {
                   alt={movie.title}
                   className="w-full h-64 object-cover rounded"
                 />
-                {movie.title} — {movie.Category}
+
+                <h3 className="text-xl font-semibold mt-2">{movie.title}</h3>
+
+                <p className="text-sm text-gray-600 mt-2">
+                  {movie.year} — {movie.director}
+                </p>
+
+                <p className="mt-2">Note : {movie.rating}</p>
               </li>
             ))}
           </ul>
+        </section>
+        <section className="bg-gray-900 text-white p-6 rounded-xl shadow-xl mb-10">
+          <h2 className="text-3xl font-bold mb-4 text-center">
+             Film du moment
+          </h2>
+
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <img
+              src={featuredMovie.poster}
+              alt={featuredMovie.title}
+              className="w-full md:w-1/3 h-96 object-cover rounded-lg shadow-lg"
+            />
+
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-3">{featuredMovie.title}</h3>
+
+              <p className="text-yellow-400 text-xl font-semibold mb-3">
+                 Note : {featuredMovie.rating}
+              </p>
+
+              <p className="text-gray-300 leading-relaxed">
+                {featuredMovie.synopsis}
+              </p>
+            </div>
+          </div>
         </section>
       </main>
     </>

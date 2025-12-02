@@ -1,4 +1,5 @@
 import moviesList from './data/moviesList.js';
+import './style.css';
 
 export default function App() {
   console.log(moviesList);
@@ -11,7 +12,7 @@ export default function App() {
 
   return (
     <>
-      <h1 style={{ color: 'red', backgroundColor: 'yellow' }}>CinéTech</h1>
+      <h1 className="title">CinéTech</h1>
       <main>
         <h2 style={{ fontSize: '20px' }}>Films à l'affiche</h2>
         <ul>

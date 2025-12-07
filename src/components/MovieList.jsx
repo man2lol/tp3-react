@@ -1,15 +1,13 @@
-import MovieCard from './MovieCard.jsx';
-
+import MovieCard from './MovieCard';
+import Section from './Section';
 export default function MovieList({ movies }) {
   return (
-    <section>
-      <h2 className="text-2xl font-bold mb-4">Films à l'affiche</h2>
-
+    <Section title={"Films à l'affiche"}>
       <ul className="grid grid-cols-1 sm:grid-cols-5 gap-6">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <MovieCard movie={movie} />
         ))}
       </ul>
-    </section>
+    </Section>
   );
 }

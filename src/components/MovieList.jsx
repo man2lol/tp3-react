@@ -1,11 +1,14 @@
-import MovieCard from './MovieCard';
-import Section from './Section';
-export default function MovieList({ movies }) {
+import MovieCard from './MovieCard.jsx';
+import Section from './Section.jsx';
+
+export default function MovieList({ title, movies, filter }) {
+  const filteredMovies = filter ? movies.filter(filter) : movies;
+
   return (
-    <Section title={"Films à l'affiche"}>
+    <Section title={title}>
       <ul className="grid grid-cols-1 sm:grid-cols-5 gap-6">
-        {movies.map((movie) => (
-          <MovieCard movie={movie} />
+        {filteredMovies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </ul>
     </Section>

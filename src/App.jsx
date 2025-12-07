@@ -54,60 +54,21 @@ export default function App() {
       </section>
 
       <main className="max-w-7xl mx-auto mt-6">
-        <MovieList movies={moviesList} />
+        <MovieList title="Films à l'affiche" movies={moviesList} />
 
-        <section>
-          <h2 style={{ fontSize: '20px' }}>Coups de cœur</h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-5 gap-6">
-            {favoriteMovies.map((movie) => (
-              <li
-                key={movie.id}
-                className="bg-gray-100 rounded-xl p-4 shadow hover:scale-105 transition-transform duration-300"
-              >
-                <img
-                  src={movie.poster}
-                  alt={movie.title}
-                  className="w-full h-64 object-cover rounded"
-                />
+        <MovieList
+          title="Coups de cœur"
+          movies={moviesList}
+          filter={(movie) => movie.rating >= 8}
+        />
 
-                <h3 className="text-xl font-semibold mt-2">{movie.title}</h3>
-
-                <p className="text-sm text-gray-600 mt-2">
-                  {movie.year} — {movie.director}
-                </p>
-
-                <p className="mt-2">Note : {movie.rating}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section>
-          <h2 style={{ fontSize: '20px' }}>Films de super-héros</h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-5 gap-6">
-            {superHeroMovies.map((movie) => (
-              <li
-                key={movie.id}
-                className="bg-gray-100 rounded-xl p-4 shadow hover:scale-105 transition-transform duration-300"
-              >
-                <img
-                  src={movie.poster}
-                  alt={movie.title}
-                  className="w-full h-64 object-cover rounded"
-                />
-
-                <h3 className="text-xl font-semibold mt-2">{movie.title}</h3>
-
-                <p className="text-sm text-gray-600 mt-2">
-                  {movie.year} — {movie.director}
-                </p>
-
-                <p className="mt-2">Note : {movie.rating}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <MovieList
+          title="Films de super-héros"
+          movies={moviesList}
+          filter={(movie) => movie.Category === 'film de super héros'}
+        />
       </main>
+
       <footer className="bg-gray-900 text-gray-300 text-center py-6 mt-12">
         <p className="text-sm">© 2024 CinéTech</p>
       </footer>

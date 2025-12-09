@@ -1,7 +1,6 @@
 import moviesList from './data/moviesList.js';
 import MovieList from './components/MovieList.jsx';
 import FeaturedMovie from './components/FeaturedMovie.jsx';
-import Counter from './components/Counter.jsx';
 
 export default function App() {
   console.log(moviesList);
@@ -39,8 +38,6 @@ export default function App() {
           movies={moviesList}
           filter={(movie) => movie.Category === 'film de super héros'}
         />
-
-        <Counter />
       </main>
 
       <footer className="bg-gray-900 text-gray-300 text-center py-6 mt-12">
